@@ -1,0 +1,11 @@
+{
+  "compilerOptions": { "strict": true },
+  "include": [
+    "./**/*ts",
+    "./**/*tsx",
+    "./**/*js",
+    "./*.ts",
+    "./*/tsx",
+    "./*.js"
+  ]
+}
