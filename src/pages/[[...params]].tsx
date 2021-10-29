@@ -1,41 +1,31 @@
-import { NextPage } from 'next';
-import Head from 'next/head';
+import React from 'react';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import Head from 'components/Head';
+import Header from 'components/Header';
 import Image from 'next/image';
 import styles from 'styles/pages/home.module.scss';
+import { useElementIsVisible } from 'hooks/useElementIsVisible';
 
 const Home: NextPage = () => {
-  const url = 'https://carmelindaraujo.com';
-  const title = 'Carmelinda Araújo | Psicopedagoga';
-  const description = '';
-  const image = '';
+  const router = useRouter();
+  const { params } = router.query;
+
+  React.useEffect(() => {
+    document.getElementById(params?.[0] || '')?.scrollIntoView();
+  }, [params]);
+
+  const ref = React.useRef<HTMLDivElement>(null);
+  const isVisible = useElementIsVisible('-70px', true, ref.current);
 
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>{title}</title>
-        <link rel="canonical" href={url} />
-        <meta itemProp="name" content={title} />
-        <meta name="description" content={description} />
-        <meta itemProp="description" content={description} />
-        <meta name="image" content={image} />
-        <meta itemProp="image" content={image} />
-
-        <meta property="og:site_name" content="Vertra" />
-        <meta property="og:url" content={url} />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
-        <meta property="og:image" content={image} />
-
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content={url} />
-        <meta property="twitter:title" content={title} />
-        <meta property="twitter:description" content={description} />
-        <meta property="twitter:image:src" content={image} />
-      </Head>
-
+    <div>
+      <Head />
       <main className={styles.main}>
-        <h1 className={styles.title}>
+        {isVisible && <Header />}
+        <h1>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
 
@@ -45,12 +35,16 @@ const Home: NextPage = () => {
         </p>
 
         <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
+          <div className={styles.card} id="documentation">
+            <Link href="#deploy" replace as="deploy" passHref>
+              <div>
+                <h2>Documentation &rarr;</h2>
+                <p>Find in-depth information about Next.js features and API.</p>
+              </div>
+            </Link>
+          </div>
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
+          <a href="https://nextjs.org/learn" className={styles.card} id="learn">
             <h2>Learn &rarr;</h2>
             <p>Learn about Next.js in an interactive course with quizzes!</p>
           </a>
@@ -58,6 +52,7 @@ const Home: NextPage = () => {
           <a
             href="https://github.com/vercel/next.js/tree/master/examples"
             className={styles.card}
+            id="examples"
           >
             <h2>Examples &rarr;</h2>
             <p>Discover and deploy boilerplate example Next.js projects.</p>
@@ -66,6 +61,7 @@ const Home: NextPage = () => {
           <a
             href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
             className={styles.card}
+            id="deploy"
           >
             <h2>Deploy &rarr;</h2>
             <p>
@@ -89,6 +85,21 @@ const Home: NextPage = () => {
       </footer>
     </div>
   );
+};
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  return {
+    fallback: 'blocking',
+    paths: ['/'],
+  };
+};
+
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale!, ['common', 'header'])),
+    },
+  };
 };
 
 export default Home;

@@ -1,30 +1,41 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
-import styles from './styles.module.css';
+import Link from 'next/link';
+import styles from './styles.module.scss';
 
-export interface Props {
-  id: string;
-  layout: 'green' | 'gold';
+export interface Props extends React.HTMLProps<HTMLButtonElement> {
+  layout: 'green-button' | 'gold-button' | 'link';
   href?: string;
   newWindow?: boolean;
+  anchor?: boolean;
 }
 
 const Button: React.FC<Props> = ({
-  id,
   children,
   href,
   newWindow,
   layout,
+  anchor,
+  className,
   ...props
 }) => {
+  const getClasses = (...classToAdd: string[]) =>
+    [className, ...classToAdd].join(' ');
+
+  const url = anchor ? `#${href}` : href || '';
+
   if (href) {
     if (!newWindow) {
       return (
-        <a rel="noreferrer" style={{ textDecoration: 'none' }} href={href}>
-          <button {...props} id={id} className={styles[layout]}>
+        <Link href={url} replace={anchor} as={href} passHref>
+          <button
+            {...props}
+            type="button"
+            className={getClasses(styles[layout])}
+          >
             {children}
           </button>
-        </a>
+        </Link>
       );
     }
     return (
@@ -35,14 +46,14 @@ const Button: React.FC<Props> = ({
         style={{ textDecoration: 'none' }}
         href={href}
       >
-        <button {...props} id={id} className={styles[layout]}>
+        <button {...props} type="button" className={getClasses(styles[layout])}>
           {children}
         </button>
       </a>
     );
   }
   return (
-    <button {...props} id={id} className={styles[layout]}>
+    <button {...props} type="button" className={getClasses(styles[layout])}>
       {children}
     </button>
   );

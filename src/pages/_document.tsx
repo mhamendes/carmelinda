@@ -24,12 +24,12 @@ export default class MyDocument extends Document {
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
             rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Rubik:wght@300;400;500;600&family=Roboto:wght@300;400;500&family=Quicksand:wght@300;400;500&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap"
           />
           <noscript>
             <link
               rel="stylesheet"
-              href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Rubik:wght@300;400;500;600&family=Roboto:wght@300;400;500&family=Quicksand:wght@300;400;500&display=swap"
+              href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap"
             />
           </noscript>
           <meta charSet="UTF-8" />
