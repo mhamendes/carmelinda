@@ -1,6 +1,9 @@
 h1 {
+  display: flex;
+  aling-items: center;
   margin: 0;
   font-size: 2.4em;
+  font-family: Ubuntu;
 
   @media (min-width: $md) {
     font-size: 3em;
@@ -9,5 +12,53 @@ h1 {
   @media (min-width: $lg) {
     font-size: 4em;
   }
-  font-family: Ubuntu;
+}
+
+h2 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 500;
+  font-family: Roboto Mono;
+
+  @media (min-width: $md) {
+    font-size: 45px;
+  }
+
+  @media (min-width: $lg) {
+    font-size: 60px;
+  }
+}
+
+h3 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 500;
+  font-family: Raleway;
+
+  @media (min-width: $md) {
+    font-size: 45px;
+  }
+
+  @media (min-width: $lg) {
+    font-size: 60px;
+  }
+}
+
+p {
+  margin: 0;
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 30px;
+  text-align: justify;
+
+  @media (min-width: $md) {
+    font-size: 20px;
+    line-height: 35px;
+  }
+
+  @media (min-width: $lg) {
+    font-size: 25px;
+  }
 }

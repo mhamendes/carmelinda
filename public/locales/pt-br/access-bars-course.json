@@ -1,0 +1,45 @@
+{
+  "titulo-componente": "Curso de Barras de Access®",
+  "curso-barras-de-access-titulo": "Seja um terapeuta de Barras de Access®",
+  "curso-barras-de-access-texto": [
+    {
+      "title": "Qual o tempo do curso?",
+      "body": "O curso de Barras® tem duração de 1 dia, são aproximadamente 8 horas entre aulas teóricas e práticas."
+    },
+    {
+      "title": "Vou receber certificado?",
+      "body": "Sim, você receberá uma certificação que o habilitará a atuar como praticante de Barras de Access® em qualquer lugar do mundo."
+    },
+    {
+      "title": "Vou receber e aplicar a técnica?",
+      "body": "Sim, você recebe e aplica a técnica duas vezes durante o curso."
+    },
+    {
+      "title": "O que está incluso?",
+      "body": "Está incluso no curso apostila, gráfico dos pontos, certificado internacional de Access Bars Practitioner e coffee break."
+    }
+  ],
+  "saiba-mais": "Saiba mais",
+  "saiba-mais-texto": [
+    {
+      "title": "Qual o valor?",
+      "body": "O valor para curso é tabelado mundialmente em €240 (duzentos e quarenta euros)."
+    },
+    {
+      "title": "Existe acompanhamento após o curso?",
+      "body": "Sim. Acompanhamento virtual de “tira dúvidas” durante 12 meses.\nTroca entre alunos quinzenalmente, conforme a disponibilidade da facilitadora."
+    },
+    {
+      "title": "Após o curso de 1 dia já estou apto a atender clientes?",
+      "body": "Sim. Com apenas 1 dia de curso você estará apto a atender clientes em todo o mundo. “Como pode melhorar?”"
+    },
+    {
+      "title": "Há pré-requisito?",
+      "body": "Não. Qualquer profissional de qualquer área está apto a realizar o curso."
+    }
+  ],
+  "mensagem-whatsapp": {
+    "questions": "Olá Carmelinda, acessei o seu site e gostaria de tirar algumas dúvidas sobre o curso de Barras de Access®.",
+    "scheduling": "Olá Carmelinda, acessei o seu site e gostaria de agendar uma sessão do curso de Barras de Access® com você!"
+  }
+}

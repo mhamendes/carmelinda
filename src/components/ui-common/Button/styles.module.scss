@@ -1,15 +1,22 @@
 .green-button {
   color: $white;
   background-color: $green;
-  padding: 1em;
-  border-radius: 20px;
+  border-radius: 10px;
+  padding: 18px;
+  font-size: 32px;
+  font-weight: 500;
+  width: 100%;
+  margin-top: 16px;
 }
 
 .gold-button {
   color: $black;
   background-color: $gold;
-  padding: 1em;
-  border-radius: 20px;
+  padding: 18px;
+  border-radius: 10px;
+  font-size: 32px;
+  font-weight: 500;
+  width: 100%;
 }
 
 .link {
@@ -17,4 +24,19 @@
   font-family: Ubuntu;
   font-weight: 500;
   font-size: 0.9375rem;
+}
+
+@media (min-width: $md) {
+  .green-button {
+    padding: 1em;
+    width: 35vw;
+    font-size: 40px;
+  }
+
+  .gold-button {
+    padding: 1em;
+    width: 35vw;
+    font-size: 40px;
+    margin-top: unset;
+  }
 }
