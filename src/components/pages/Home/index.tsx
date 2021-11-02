@@ -1,4 +1,6 @@
 import React from 'react';
+
+import Introduction from './components/Introduction';
 import Coach from './components/Coach';
 import AccessBars from './components/AccessBars';
 import AccessBarsCourse from './components/AccessBarsCourse';
@@ -11,6 +13,7 @@ import GemellarConstellations from './components/GemellarConstellations';
 const Home: React.FC = () => {
   return (
     <div>
+      <Introduction />
       <Coach />
       <AccessBars />
       <AccessBarsCourse />

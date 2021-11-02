@@ -55,6 +55,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
         'numerology',
         'familiar-constellations',
         'gemellar-constellations',
+        'introduction',
       ])),
     },
   };
