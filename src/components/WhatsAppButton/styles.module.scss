@@ -1,0 +1,59 @@
+.contact-button {
+  font-family: Ubuntu;
+  width: 200px;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  margin-top: unset;
+  justify-content: space-between;
+
+  @media (min-width: $lg) {
+    font-size: 1em;
+    margin: 0 8px;
+  }
+}
+
+.contact-buttonlarge {
+  font-family: Ubuntu;
+  width: 300px;
+  margin: 0 8px;
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.whatsApp-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background-color: #25d366;
+  color: $white;
+  border: 3px solid $white;
+  border-radius: 200px;
+  margin-left: 8px;
+}
+
+.whatsApp-containerlarge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #25d366;
+  color: $white;
+  border: 3px solid $white;
+  border-radius: 200px;
+}
+
+.whatsApp {
+  width: 65%;
+  height: 65%;
+}
+
+.whatsApplarge {
+  width: 70%;
+  height: 70%;
+}

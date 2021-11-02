@@ -16,7 +16,12 @@ export interface Props {
 const ListContent: React.FC<Props> = ({ title, list }) => {
   return (
     <div className={styles.container}>
-      {title && <h3 className={styles.h3}>{title}</h3>}
+      {title && (
+        <h3
+          className={styles.h3}
+          dangerouslySetInnerHTML={{ __html: parseLineBreak(title) }}
+        />
+      )}
       {list?.length &&
         list.map((item, index) => {
           return (

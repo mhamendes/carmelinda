@@ -2,57 +2,55 @@ import React from 'react';
 import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
 
-import { FaWhatsapp } from '@react-icons/all-files/fa/FaWhatsapp';
-
-import Button from 'components/ui-common/Button';
 import Logo from 'assets/images/onlyLogo.webp';
 
+import Navigator from './components/Navigator';
+import Drawer from './components/Drawer';
 import styles from './styles.module.scss';
 
-const Header: React.FC = () => {
-  const { t: tCommon } = useTranslation('common');
-  const { t: tHeader } = useTranslation('header');
+export type Option = {
+  label: string;
+  link: string;
+  anchor: boolean;
+};
 
-  const options = React.useMemo(() => {
+const Header: React.FC = () => {
+  const { t } = useTranslation('common');
+
+  const options = React.useMemo<Option[]>(() => {
     return [
       {
-        label: tCommon('coach'),
-        link: tCommon('mentoria-individual-id'),
+        label: t('coach'),
+        link: t('mentoria-individual-id'),
         anchor: true,
       },
       {
-        label: tCommon('barras-de-access'),
-        link: tCommon('barras-de-access-id'),
+        label: t('barras-de-access'),
+        link: t('barras-de-access-id'),
         anchor: true,
       },
       {
-        label: tCommon('curso'),
-        link: tCommon('curso-barras-de-access-id'),
+        label: t('curso'),
+        link: t('curso-barras-de-access-id'),
         anchor: true,
       },
       {
-        label: tCommon('constelacao-familiar'),
-        link: tCommon('constelacao-familiar-id'),
+        label: t('numerologia'),
+        link: t('bussula-de-nascimento-id'),
         anchor: true,
       },
       {
-        label: tCommon('constelacao-gemellar'),
-        link: tCommon('constelacao-gemellar-id'),
+        label: t('constelacao-familiar'),
+        link: t('constelacao-familiar-id'),
         anchor: true,
       },
       {
-        label: tCommon('numerologia'),
-        link: tCommon('bussula-de-nascimento-id'),
+        label: t('constelacao-gemellar'),
+        link: t('constelacao-gemellar-id'),
         anchor: true,
       },
     ];
-  }, [tCommon]);
-
-  const whatsAppLink = React.useMemo(() => {
-    return `https://api.whatsapp.com/send?phone=${tCommon(
-      'whatsapp'
-    )}&text=${tHeader('mensagem-whatsapp')}`;
-  }, [tCommon, tHeader]);
+  }, [t]);
 
   return (
     <div className={styles.container}>
@@ -67,30 +65,8 @@ const Header: React.FC = () => {
         />
       </div>
       <div className={styles['button-container']}>
-        {options.map((item) => {
-          return (
-            <Button
-              key={item.label}
-              layout="link"
-              href={item.link}
-              anchor={item.anchor}
-              className={styles.button}
-            >
-              {item.label}
-            </Button>
-          );
-        })}
-        <Button
-          layout="green-button"
-          href={whatsAppLink}
-          newWindow
-          className={styles['contact-button']}
-        >
-          {tHeader('botao-contato')}
-          <div className={styles['whatsApp-container']}>
-            <FaWhatsapp className={styles.whatsApp} />
-          </div>
-        </Button>
+        <Navigator options={options} />
+        <Drawer options={options} />
       </div>
     </div>
   );

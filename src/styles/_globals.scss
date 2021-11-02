@@ -3,6 +3,7 @@ body {
   flex: auto;
   height: 100%;
   scroll-behavior: smooth;
+  background-color: $white;
   &::-webkit-scrollbar {
     display: none;
   }
