@@ -1,5 +1,6 @@
 import React from 'react';
 
+import CallOut from './components/CallOut';
 import Introduction from './components/Introduction';
 import Coach from './components/Coach';
 import AccessBars from './components/AccessBars';
@@ -10,9 +11,14 @@ import GemellarConstellations from './components/GemellarConstellations';
 
 // import { Container } from './styles';
 
-const Home: React.FC = () => {
+export interface Props {
+  isVisible: boolean;
+}
+
+const Home: React.FC<Props> = ({ isVisible }) => {
   return (
     <div>
+      <CallOut isVisible={isVisible} />
       <Introduction />
       <Coach />
       <AccessBars />

@@ -37,7 +37,6 @@ const Introduction: React.FC = () => {
       <Content body={t('introducao-1')} />
       <Separator image={Infinity} alt="Infinito" />
       <Content body={t('introducao-2')} />
-      <div className={styles['margin-bottom']} />
     </div>
   );
 };

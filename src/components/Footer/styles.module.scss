@@ -6,7 +6,11 @@
   width: 80%;
   border-top: 2px solid $medium-grey;
   padding: 3em;
-  margin: auto;
+  margin: 8vh auto 0;
+
+  @media (min-width: $md) {
+    margin: 12vh auto 0;
+  }
 }
 
 .logo-container {

@@ -4,7 +4,7 @@ import Link from 'next/link';
 import styles from './styles.module.scss';
 
 export interface Props extends React.HTMLProps<HTMLButtonElement> {
-  layout: 'green-button' | 'gold-button' | 'link';
+  layout: 'green-button' | 'gold-button' | 'link' | 'menu-button';
   href?: string;
   newWindow?: boolean;
   anchor?: boolean;
@@ -27,14 +27,16 @@ const Button: React.FC<Props> = ({
   if (href) {
     if (!newWindow) {
       return (
-        <Link href={url} replace={anchor} as={href} passHref>
-          <button
-            {...props}
-            type="button"
-            className={getClasses(styles[layout])}
-          >
-            {children}
-          </button>
+        <Link href={url}>
+          <a>
+            <button
+              {...props}
+              type="button"
+              className={getClasses(styles[layout])}
+            >
+              {children}
+            </button>
+          </a>
         </Link>
       );
     }
