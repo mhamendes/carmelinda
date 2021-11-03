@@ -3,9 +3,9 @@ import NextHead from 'next/head';
 
 const Head: React.FC = () => {
   const url = 'https://www.carmelindaaraujo.com/';
-  const title = 'Carmelinda Araújo | Terapeuta';
+  const title = 'Carmelinda Araújo | Mentora, Terapeuta e Psicopedagoga';
   const description =
-    'Terapeuta e Psicopedagoga Carmelinda Araújo - Curso de Barras de Access em Braga';
+    'Mentora Terapeuta e Psicopedagoga Carmelinda Araújo - Curso de Barras de Access em Braga';
   const image = `${url}/logo.webp`;
 
   return (

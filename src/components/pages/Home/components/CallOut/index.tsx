@@ -81,7 +81,10 @@ const CallOut: React.FC<Props> = ({ isVisible }) => {
       <div className={styles['content-container']}>
         <div
           className={styles.leaves}
-          style={{ backgroundImage: `url(${LeavesLeft})` }}
+          style={{
+            backgroundImage: `url(${LeavesLeft})`,
+            backgroundPosition: 'bottom left',
+          }}
         />
         <div className={styles.menu}>
           {options.map((item) => {
@@ -101,7 +104,10 @@ const CallOut: React.FC<Props> = ({ isVisible }) => {
         </div>
         <div
           className={styles.leaves}
-          style={{ backgroundImage: `url(${LeavesRight})` }}
+          style={{
+            backgroundImage: `url(${LeavesRight})`,
+            backgroundPosition: 'bottom right',
+          }}
         />
       </div>
     </div>
