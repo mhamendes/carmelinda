@@ -3,3 +3,7 @@
   overflow-x: scroll;
   scroll-behavior: smooth;
 }
+
+.container::-webkit-scrollbar {
+  display: none;
+}
