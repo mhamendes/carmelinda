@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'next-i18next';
+import ReactPlayer from 'react-player';
 
 import Title from 'components/Title';
 import Content from 'components/Content';
@@ -31,6 +32,13 @@ const AccessBars: React.FC = () => {
         title={t('como-funciona-titulo')}
         body={t('como-funciona-texto')}
       />
+      <div className={styles['video-container']}>
+        <ReactPlayer
+          url={t('video-url')}
+          playsinline
+          style={{ maxWidth: '100%' }}
+        />
+      </div>
       <ContactButton
         message={t('mensagem-whatsapp', { returnObjects: true })}
       />
