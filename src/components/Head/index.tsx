@@ -2,7 +2,7 @@ import React from 'react';
 import NextHead from 'next/head';
 
 const Head: React.FC = () => {
-  const url = 'https://carmelindaraujo.com';
+  const url = 'https://www.carmelindaaraujo.com/';
   const title = 'Carmelinda Araújo | Terapeuta';
   const description =
     'Terapeuta e Psicopedagoga Carmelinda Araújo - Curso de Barras de Access em Braga';

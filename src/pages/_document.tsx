@@ -33,7 +33,6 @@ export default class MyDocument extends Document {
             />
           </noscript>
           <meta charSet="UTF-8" />
-          <link rel="manifest" href="/manifest.json" />
           <link rel="shortcut icon" href="/favicon.ico" />
 
           <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
