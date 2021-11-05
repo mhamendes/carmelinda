@@ -20,7 +20,6 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-gtm-module": "^2.0.11",
-    "react-player": "^2.9.0",
     "sass": "^1.43.4",
     "sharp": "^0.29.2"
   },
