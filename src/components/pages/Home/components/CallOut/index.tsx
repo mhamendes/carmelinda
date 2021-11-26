@@ -20,6 +20,7 @@ export interface Props {
 const CallOut: React.FC<Props> = ({ isVisible }) => {
   const { t } = useTranslation('callout');
   const { t: tCommon } = useTranslation('common');
+  const [displayElement, setDisplayElement] = React.useState<any>([]);
 
   const options = React.useMemo(() => {
     return [
@@ -56,6 +57,37 @@ const CallOut: React.FC<Props> = ({ isVisible }) => {
     ];
   }, [t, tCommon]);
 
+  let index = 0;
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      const element = (
+        <div
+          className={styles['menu-item']}
+          key={`${options[index].link}-button`}
+        >
+          <Button
+            layout="menu-button"
+            href={options[index].link}
+            anchor={options[index].anchor}
+            dangerouslySetInnerHTML={{
+              __html: parseLineBreak(options[index].label),
+            }}
+          />
+        </div>
+      );
+      setDisplayElement((oldArray: any) => [...oldArray, element]);
+      index++;
+      if (index >= options.length) {
+        clearInterval(interval);
+      }
+    }, 500);
+
+    return () => {
+      clearInterval(interval);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <div className={styles.container} id={tCommon('callout-id')}>
       <div className={styles.header}>
@@ -87,19 +119,8 @@ const CallOut: React.FC<Props> = ({ isVisible }) => {
           }}
         />
         <div className={styles.menu}>
-          {options.map((item) => {
-            return (
-              <div className={styles['menu-item']} key={`${item.link}-button`}>
-                <Button
-                  layout="menu-button"
-                  href={item.link}
-                  anchor={item.anchor}
-                  dangerouslySetInnerHTML={{
-                    __html: parseLineBreak(item.label),
-                  }}
-                />
-              </div>
-            );
+          {displayElement.map((item: any) => {
+            return item;
           })}
         </div>
         <div

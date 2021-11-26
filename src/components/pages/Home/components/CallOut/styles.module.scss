@@ -31,6 +31,11 @@
 
 .content-container {
   display: flex;
+  min-height: 756px;
+
+  @media (min-width: $sm) {
+    min-height: 788px;
+  }
 }
 
 .leaves {
@@ -53,8 +58,6 @@
 }
 
 .menu {
-  display: grid;
-  grid-template-columns: 100%;
   width: 100%;
   margin-bottom: 2em;
 
@@ -63,9 +66,19 @@
   }
 }
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .menu-item {
   width: 70%;
   margin: 0 auto 1em;
+  animation: fadeIn 1s ease-in;
 }
 
 .contact-button {
